@@ -60,7 +60,6 @@ class BasicOrderSystem extends OrderSystem {
     } else if (amounts.last <= total * amountThreshold && previous.nonEmpty) {
       previous
     } else {
-      println(amounts)
       val bestPick = pickBests(pits, amounts, Map())
       val splitAmounts = amounts.foldLeft(List[Double]()) {
         case (acc, amount) if amount == amounts.head => acc ++ split(amount, pits.length)
